@@ -1,0 +1,7 @@
+sudo apt-get install pulseaudio pavucontrol && pavucontrol
+> CHANGES MADE USING PAVUCONTROL, NEED A FILE TO AUTOMATIC DO THESE!!!
+
+xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output HDMI-1-0 --primary --mode 2560x1440 --pos 1920x0 --rate 120.00 --rotate normal
+
+sudo apt-get install sxhkd
+sudo apt-get install picom

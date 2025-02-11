@@ -1,0 +1,97 @@
+####### Media Keys ########
+###########################
+# Brightness              # 
+###########################
+XF86MonBrightnessDown
+	brightnessctl set 5%-
+
+XF86MonBrightnessUp
+    brightnessctl set +5%
+
+###########################
+# Audio                   #
+###########################
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume 0 {+,-}1%
+
+
+##########################
+# Track                  #
+##########################
+XF86Audio{Prev,Next}
+	playerctl {previous, next}
+
+XF86Audio{Play,Stop}
+	playerctl {play-pause}
+
+##########################
+# Other                  # 
+##########################
+
+
+#########################
+##### Apps Shortcut ##### 
+super + Return
+	kitty
+
+super + d
+	rofi -no-lazy-grab -show drun -modi drun 
+
+super + Tab
+	rofi -show window -show-icons -theme ~/.config/rofi/launcher.rasi
+	
+@Print
+	flameshot gui
+##########################################################
+##################################### Window Manager ##### 
+super + shift + r
+	i3-msg restart ; killall sxhkd && sxhkd & disown
+
+super + shift + e
+	i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'
+
+super + shift + q
+	i3-msg kill
+
+super + {1-9,0}
+	i3-msg workspace {1-9,0}
+
+super + {h,j,k,l,space}
+	i3-msg focus {left,down,up,right,mode_toggle}
+
+##########################
+##### Move Window ##### 
+super + shift + {1-9,0}
+	i3-msg move container to workspace {1-9,0}
+
+super + shift + {h,j,k,l}
+	i3-msg move {left,down,up,right}
+
+control + super + {h,j,k,l}
+	i3-msg move workspace to output {left,down,up,right}
+
+#### RESIZE CONTAINER ####
+super + alt + {h,j,k,l}
+       i3-msg resize {shrink width,grow height,shrink height,grow width} 10 px or 10 ppt
+
+######### LAYOUT #########
+super + s{_,s}
+        i3-msg floating toggle ; {_,sticky toggle}
+
+super + v
+        i3-msg split toggle
+
+super + f
+        i3-msg fullscreen toggle
+
+super + z
+	i3-msg "move scratchpad"
+
+super + x
+	i3-msg "scratchpad show"
+
+super + e
+	i3-msg swap container with mark supere ; i3-msg unmark supere ; i3-msg mark supere

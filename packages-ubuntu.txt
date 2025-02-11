@@ -1,0 +1,10 @@
+git
+kitty
+neofetch
+i3
+zsh
+docker.io
+sxhkd
+picom
+flameshot
+feh

@@ -1,5 +1,0 @@
-git
-kitty
-neofetch
-i3
-zsh
